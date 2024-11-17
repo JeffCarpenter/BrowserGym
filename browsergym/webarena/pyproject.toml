@@ -25,11 +25,18 @@ dynamic = ["dependencies", "version"]
 [project.urls]
 homepage = "https://github.com/ServiceNow/BrowserGym"
 
+[tool.hatch.envs.default]
+installer = "uv"
+
 [tool.hatch.version]
 path = "../core/src/browsergym/core/__init__.py"
 
 [tool.hatch.metadata.hooks.requirements_txt]
 files = ["requirements.txt"]
 
+[tool.hatch.metadata]
+allow-direct-references = true
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/browsergym"]
+
